@@ -1,0 +1,34 @@
+<html>
+<head>
+<script>
+function performOperation() {
+
+  var num1 = parseFloat(document.getElementById('num1').value);
+  var num2 = parseFloat(document.getElementById('num2').value);
+  var result;
+
+  var errorMsg = document.getElementById('msg');
+  errorMsg.style.color = 'red';
+  errorMsg.innerHTML = '';
+
+  if (isNaN(num1) || isNaN(num2)) {
+    errorMsg.innerHTML = '* Please enter valid numbers in both fields.';
+    return;
+  }
+
+  result = num1 + num2;
+
+  document.getElementById('msg').innerHTML = 'Result: ' + result;
+  document.getElementById('msg').style.color='green';
+}
+
+</script>
+</head>
+<body>
+<input type="text" id="num1" placeholder="Enter a number" onblur="performOperation()" />
+<input type="text" id="num2" placeholder="Enter a number" onblur="performOperation()" />
+
+<label id="msg"></label>
+
+</body>
+</html>

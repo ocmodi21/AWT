@@ -1,0 +1,58 @@
+<html>
+<head>
+<script>
+function performOperation(operator) {
+  var num1 = parseFloat(document.getElementById('num1').value);
+  var num2 = parseFloat(document.getElementById('num2').value);
+  var result;
+
+  var errorMsg = document.getElementById('msg');
+  errorMsg.style.color = 'red';
+  errorMsg.innerHTML = '';
+
+  if (isNaN(num1) || isNaN(num2)) {
+    errorMsg.innerHTML = '* Please enter valid numbers in both fields.';
+    return;
+  }
+
+  switch (operator) {
+    case '+':
+      result = num1 + num2;
+      break;
+    case '-':
+      result = num1 - num2;
+      break;
+    case '*':
+      result = num1 * num2;
+      break;
+    case '/':
+      if (num2 === 0) {
+        errorMsg.innerHTML = '* Cannot divide by zero.';
+        return;
+      }
+      result = num1 / num2;
+      break;
+    default:
+      errorMsg.innerHTML = '* Invalid operator.';
+      return;
+  }
+
+  document.getElementById('msg').innerHTML = 'Result: ' + result;
+  document.getElementById('msg').style.color='green';
+}
+
+</script>
+</head>
+<body>
+<input type="text" id="num1" placeholder="Enter a number" />
+<input type="text" id="num2" placeholder="Enter a number" />
+
+<button onclick="performOperation('+')">Add</button>
+<button onclick="performOperation('-')">Subtract</button>
+<button onclick="performOperation('*')">Multiply</button>
+<button onclick="performOperation('/')">Divide</button>
+
+<label id="msg"></label>
+
+</body>
+</html>
