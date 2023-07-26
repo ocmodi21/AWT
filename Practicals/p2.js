@@ -1,4 +1,4 @@
-const numbersArray = [10, 20, 30, 40, 50];
+const numbersArray = [10, "20", { 1: "ja3" }, 40.5, true];
 
 const arrayLength = numbersArray.length;
 console.log("Length of the array:", arrayLength);
@@ -6,7 +6,7 @@ console.log("Length of the array:", arrayLength);
 console.log("Element at index 2:", numbersArray[2]);
 console.log("Element at index 4:", numbersArray[4]);
 
-numbersArray.push(60);
+numbersArray.push({ 60: "Pandya" });
 console.log("Array after push:", numbersArray);
 
 numbersArray.pop();
@@ -27,9 +27,9 @@ const newArray = numbersArray.concat([70, 80]);
 console.log("Concatenated array:", newArray);
 
 const flatArray = [
-  [1, 2],
-  [3, 4],
-  [5, 6],
+  [1, 10],
+  [3, 10],
+  [5, 10],
 ].flat();
 console.log("Flat array:", flatArray);
 
@@ -44,6 +44,7 @@ const person = {
   name: "Om Modi",
   age: 20,
   gender: "Male",
+  sem: 5,
 };
 
 function displayPersonDetails(person) {

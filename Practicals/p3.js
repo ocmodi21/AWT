@@ -1,28 +1,28 @@
-let x = 10;
-x = 20;
-console.log(x);
+let a = 10;
+a = 20;
+console.log(a);
 
 const PI = 3.14;
 
-const add = (a, b) => a + b;
-console.log(add(5, 10));
+const add = (x, y) => x + y;
+console.log(add(67, 10));
 
-const arr1 = [1, 2, 3];
-const arr2 = [...arr1, 4, 5];
+const arr1 = [19, 29, 39, 56, 79, 89];
+const arr2 = [...arr1, 43, 53];
 console.log(arr2);
 
-const fruits = ["apple", "banana", "orange"];
-for (const fruit of fruits) {
-  console.log(fruit);
+const vegie = ["potato", "onion", "brinjal"];
+for (const each of vegie) {
+  console.log(each);
 }
 
-const map = new Map();
-map.set("key1", "value1");
-map.set("key2", "value2");
-console.log(map.get("key1"));
+const mp = new Map();
+mp.set("key1", "value1");
+mp.set("key2", "value2");
+console.log(mp.get("key1"));
 
-const set = new Set([1, 2, 3, 3, 4, 5]);
-console.log(set);
+const st = new Set([12, 22, 32, 23, 42, 52, 62, 72, 82]);
+console.log(st);
 
 class Person {
   constructor(name, age) {
@@ -31,20 +31,18 @@ class Person {
   }
 
   greet() {
-    console.log(
-      `Hello, my name is ${this.name} and I am ${this.age} years old.`
-    );
+    console.log(`Hello, my name is ${this.name} & I am ${this.age} years old.`);
   }
 }
 
-const john = new Person("John", 30);
-john.greet();
+const userInfo = new Person("Om Modi", 20);
+userInfo.greet();
 
 const fetchData = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve("Data fetched successfully!");
-    }, 2000);
+      resolve("Data fetched");
+    }, 5000);
   });
 };
 
@@ -52,8 +50,8 @@ fetchData().then((data) => {
   console.log(data);
 });
 
-const sym1 = Symbol("symbol1");
-const sym2 = Symbol("symbol2");
+const sym1 = Symbol("foo");
+const sym2 = Symbol("foo");
 console.log(sym1 === sym2);
 
 const greet = (name = "Guest") => {
@@ -61,10 +59,10 @@ const greet = (name = "Guest") => {
 };
 
 greet();
-greet("John");
+greet("Om Modi");
 
 const sum = (...numbers) => {
   return numbers.reduce((acc, num) => acc + num, 0);
 };
 
-console.log(sum(1, 2, 3, 4, 5));
+console.log(sum(18, 82, 38, 49, 50));

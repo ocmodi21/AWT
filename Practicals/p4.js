@@ -1,29 +1,29 @@
-let globalVar = "I am a global variable";
+let globalVar = "global variable";
 
-function factorialRecursive(num) {
-  if (num === 0 || num === 1) {
+function factorial_Recursive(n) {
+  if (n === 0 || n === 1) {
     return 1;
   } else {
-    return num * factorialRecursive(num - 1);
+    return n * factorial_Recursive(n - 1);
   }
 }
 
 function outerFunction() {
-  let outerVar = "I am a variable in outerFunction";
+  let outerVar = "variable in outer Function";
 
   function nestedFunction() {
-    let nestedVar = "I am a variable in nestedFunction";
+    let nestedVar = "variable in nested Function";
 
     console.log("Accessing global variable:", globalVar);
-    console.log("Accessing variable in outerFunction:", outerVar);
-    console.log("Accessing variable in nestedFunction:", nestedVar);
+    console.log("Accessing variable of outer Function:", outerVar);
+    console.log("Accessing variable of nested Function:", nestedVar);
   }
 
   nestedFunction();
 }
 
-const numToFactorial = 5;
-const result = factorialRecursive(numToFactorial);
-console.log(`Factorial of ${numToFactorial} is:`, result);
+const num = 5;
+const result = factorial_Recursive(num);
+console.log(`Factorial of ${num} is:`, result);
 
 outerFunction();
